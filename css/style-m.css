@@ -1,0 +1,239 @@
+@charset "utf-8";
+
+/* reset */
+html {-webkit-text-size-adjust: none; text-size-adjust: none;}
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 600;}
+a {color: inherit; text-decoration: inherit;}
+li {list-style: none;}
+img {vertical-align: middle; max-width: 100%;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i[class^="fa"] {position: relative; display: inline-block; vertical-align: middle; overflow: hidden;}
+i[class^="fa"] span {position: absolute; left: -9999px;}
+.ir-hidden {position: absolute; left: -9999px;}
+.pc {display: none !important;}
+br.only-pc {content: '';}
+br.only-pc::after {content: '\00a0';}
+
+
+/* common */
+body {font-family: 'Open Sans', sans-serif; font-size: 14px; color: #333333; background: #ffffff;}
+#wrapper {min-width: 320px; max-width: 1024px; margin: 0 auto; overflow: hidden;}
+#wrapper.open {height: 100vh;}
+#wrapper.open::after {content: ''; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.1);}
+#skip-nav {position: fixed; left: 0; top: -40px; width: 100%; line-height: 40px; text-align: center; background-color: rgba(0, 0, 0, 0.7); color: #ffffff; font-size: 16px; transition: top 0.3s; z-index: 100000;}
+#skip-nav:focus {top: 0;}
+#header {position: fixed; left: 0; top: 0; width: 100%; height: 52px; font-size: 15px; font-weight: 600; z-index: 10000;}
+#header h1 {position: absolute; left: 20px; top: 0; width: 100px; height: 100%;}
+#header h1 a {display: block; height: 100%; line-height: 52px;}
+#header h1 a img {position: absolute; top: 50%; transform: translate(0, -50%); width: 100%;}
+
+#header a.toggle {position: absolute; right: 20px; top: 50%; transform: translate(0, -50%); width: 18px; height: 12px; z-index: 10;}
+#header a.toggle::before {content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 2px; background: #000000; transition: all 0.3s;}
+#header a.toggle span {position: absolute; left: 0; top: 50%; transform: translate(0, -50%); width: 100%; height: 2px; background: #000000; overflow: hidden; text-indent: -9999px; transition: all 0.3s;}
+#header a.toggle::after {content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background: #000000; transition: all 0.3s;}
+#wrapper.open #header a.toggle::before {top: 50%; transform: rotate(35deg) translate(0, -50%);}
+#wrapper.open #header a.toggle span {opacity: 0;}
+#wrapper.open #header a.toggle::after {bottom: 50%; transform: rotate(-35deg) translate(0, 50%);}
+
+#quick-link {position: fixed; right: -310px; top: 0; width: 310px; height: 100%; background: #ffffff; overflow: auto; transition: right 0.3s; font-size: 13px;}
+#wrapper.open #quick-link {right: 0;}
+#quick-link > ul {padding: 60px 20px 100px 20px;}
+#quick-link > ul > li + li {border-top: 1px solid #e0e0e0;}
+#quick-link > ul > li > a {display: block; line-height: 56px; padding-left: 15px;}
+
+#footer {position: fixed; left: 0; bottom: 20px; width: 100%; text-align: center; font-size: 13px;}
+#footer ul li {display: inline-block;}
+#footer ul li + li {margin-left: 20px;}
+
+/* main */
+body.main #main > section {height: 100vh; background: #ffffff url(../img/main-visual-01-m.jpg) center center no-repeat; background-size: cover;}
+body.main #main > section:nth-child(2) {background-image: url(../img/main-visual-02-m.jpg);}
+body.main #main > section:nth-child(3) {background-image: url(../img/main-visual-03-m.jpg);}
+body.main #main > section:nth-child(4) {background-image: url(../img/main-visual-04-m.jpg);}
+body.main #main > section:nth-child(5) {background-image: url(../img/main-visual-05-m.jpg);}
+body.main #main > section:nth-child(6) {background-image: url(../img/main-visual-06-m.jpg);}
+body.main #main > section:nth-child(7) {background-image: url(../img/main-visual-07-m.jpg);}
+body.main #main > section h2 {position: fixed; top: 15%; left: 50%; transform: translate(-50%, 0); text-align: center; font-size: 36px; display: none;}
+body.main #main > section h2 span {display: block; font-size: 14px; font-weight: 300;}
+body.main #main > section h2 span a {font-weight: 400; display: inline-block; position: relative;}
+body.main #main > section h2 span a::before {content: ''; position: absolute; left: 0; top: 23px; width: 100%; height: 1px; background-color: #666666; transition: all 0.3s;}
+body.main #main > section h2 span a:hover::before {height: 2px; background-color: #000000;}
+body.main #main > section p.link {position: fixed; left: 0; bottom: 10%; width: 100%; text-align: center; display: none; box-sizing: border-box; padding: 0 20px;}
+body.main #main > section p.link a + a {margin-top: 10px;}
+body.main #main > section p.link i {position: absolute; left: 50%; bottom: -50px; transform: translate(-50%, 0); font-size: 30px;}
+body.main #main > section.on h2,
+body.main #main > section.on p.link {display: block;}
+
+
+/* sub(common) */
+
+
+
+
+
+/* models */
+body.models section.summary {position: relative; height: 100vh; overflow: hidden; background: url(../img/models-visual-01-m.jpg) center center no-repeat; background-size: cover;}
+body.models section.summary h2 {position: absolute; left: 50%; top: 15%; transform: translate(-50%, 0); font-size: 36px; text-align: center;}
+body.models section.summary h2 span {display: block; font-size: 14px; font-weight: 400;}
+body.models section.summary ul.spec {position: absolute; bottom: 100px;}
+body.models section.summary ul.spec + p.mobile {position: absolute; left: 0; bottom: 30px; width: 100%; padding: 0 20px; box-sizing: border-box;}
+body.models section.summary ul.spec + p.mobile a {width: 100%;}
+
+body.models section.interior section.visual {position: relative; overflow: hidden; height: 100vh; background: url(../img/models-visual-02.jpg) center center no-repeat; background-size: cover;}
+body.models section.interior section.visual h2 {position: absolute; top: 80px; left: 50%; transform: translate(-50%, 0); color: #ffffff; font-size: 24px;}
+
+body.models section.power section.intro {position: relative; height: 500px; background: url(../img/models-visual-03-m.jpg) center center no-repeat; background-size: cover;}
+body.models section.power section.intro ul.spec {position: absolute; left: 0; bottom: 60px;}
+
+body.models section.power section.description {background: #ffffff; padding: 30px;}
+body.models section.power section.description div.title {}
+body.models section.power section.description div.desc {}
+body.models section.power section.description h3 {font-size: 26px; margin-bottom: 30px;}
+body.models section.power section.description h3 span {display: block; font-size: 16px; font-weight: 400; margin-bottom: -5px;}
+body.models section.power section.description p {font-size: 15px; line-height: 1.5em; margin-bottom: 30px;}
+body.models section.power section.description a.order {width: 100%;}
+
+body.models section.power section.power-train {background: #eeeeee; padding: 80px 0;}
+body.models section.power section.power-train div.title {padding: 0 50px;}
+body.models section.power section.power-train h3 {font-size: 24px; margin-bottom: 20px;}
+body.models section.power section.power-train h3 + p {font-size: 15px; line-height: 1.5em; margin-bottom: 20px;}
+body.models section.power section.power-train p.ref {text-align: center; margin-top: 40px; font-size: 13px; color: #777777;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* module */
+a.btn {display: inline-block; box-sizing: border-box; min-width: 260px; line-height: 40px; padding: 0 2em; font-size: 14px; font-weight: 600; text-align: center; border-radius: 100px; background-color: rgba(255, 255, 255, 0.8); color: #000000;}
+a.btn.order {min-width: 154px; height: 40px; line-height: 34px; border: 3px solid #ffffff; background: transparent; color: #ffffff; padding: 0; transition: all 0.3s;}
+a.btn.full {min-width: none; width: 100%;}
+a.btn.gray {background-color: rgba(255, 255, 255, 0.7); color: #000000;}
+a.btn.dark {background-color: rgba(0, 0, 0, 0.7); color: #ffffff;}
+a.btn.black {background-color: #000000; color: #ffffff;}
+a.btn.transparent {border-color: #ffffff; background: transparent; color: #ffffff;}
+a.btn.transparent:hover {background: #ffffff; color: #000000;}
+a.btn.basic {border-color: #000000; background: #ffffff; color: #000000;}
+a.btn.basic:hover {background: #ffffff; color: #ffffff;}
+
+
+ul.spec {display: table; width: 100%; border-collapse: collapse; table-layout: fixed; color: #ffffff; font-size: 12px;}
+ul.spec li {display: table-cell; text-align: center;}
+ul.spec li em {display: block; font-size: 30px; font-weight: 600; margin-bottom: 3px;}
+ul.spec li em span {font-size: 16px;}
+
+
+div.content-slide {background: #000000; position: relative; overflow: hidden; margin: 0 auto; color: #ffffff;}
+div.content-slide > div.visual {position: relative;}
+div.content-slide > div.visual p.dummy img {width: 100%; opacity: 0;}
+div.content-slide ul.slide li {position: absolute; left: 0; top: 0; display: none;}
+div.content-slide ul.slide li:first-child {display: block;}
+div.content-slide ul.slide li img {width: 100%;}
+div.content-slide p.control a {position: absolute; top: 50%; transform: translate(0, -50%); width: 40px; height: 40px; border: 2px solid #ffffff; text-align: center; line-height: 36px; box-sizing: border-box; color: #ffffff; opacity: 0.7; transition: opacity 0.3s;}
+div.content-slide p.control a:hover {opacity: 1;}
+div.content-slide p.control a.prev {left: 40px;}
+div.content-slide p.control a.next {right: 40px;}
+div.content-slide > div.text {position: relative; height: calc(300px - 20vw);}
+div.content-slide ul.indicator {position: absolute; top: 25px; left: 25px;}
+div.content-slide ul.indicator li {float: left;}
+div.content-slide ul.indicator li + li {margin-left: 8px;}
+div.content-slide ul.indicator li a {display: block; width: 8px; height: 8px; border: 1px solid #ffffff; border-radius: 20px; overflow: hidden; text-indent: -999px;}
+div.content-slide ul.indicator li.on a {background: #ffffff;}
+div.content-slide ul.desc li {position: absolute; top: 60px; left: 25px; font-size: 14px; width: calc(100% - 50px); display: none;}
+div.content-slide ul.desc li:first-child {display: block;}
+div.content-slide ul.desc li em {font-size: 20px; font-weight: 600; display: block; margin-bottom: 5px;}
+
+
+ul.content-grid {margin: 0 auto; background: #000000; color: #ffffff; font-size: 14px;}
+ul.content-grid > li {position: relative; overflow: hidden;}
+ul.content-grid > li p.image img {width: 100%;}
+ul.content-grid > li p.desc {padding: 30px;}
+ul.content-grid > li p.desc em {display: block; font-weight: 600; margin-bottom: 20px; font-size: 1.1em;}
+
+
+div.spec-slide {}
+div.spec-slide div.box-top {position: relative; overflow: hidden; margin-bottom: 30px;}
+div.spec-slide div.box-top img {width: 100%;}
+div.spec-slide div.box-top p.dummy {opacity: 0;}
+div.spec-slide div.box-top ul.slide {position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+div.spec-slide div.box-top ul.slide > li {position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: none;}
+div.spec-slide div.box-top ul.slide > li:first-child {display: block;}
+div.spec-slide div.box-bottom {position: relative; width: calc(100% - 60px); margin: 0 auto;}
+div.spec-slide div.box-bottom ul.indicator {overflow: hidden;}
+div.spec-slide div.box-bottom ul.indicator > li {float: left; width: 48%;}
+div.spec-slide div.box-bottom ul.indicator > li + li {margin-left: 4%;}
+div.spec-slide div.box-bottom ul.indicator > li > a {display: block; position: relative; box-sizing: border-box; border-top: 3px solid #999999; padding: 20px; opacity: 0.7; transition: opacity 0.3s;}
+div.spec-slide div.box-bottom ul.indicator > li > a > em {display: block; font-size: 18px; margin-bottom: 8px; font-weight: 600;}
+div.spec-slide div.box-bottom ul.indicator > li > a > p {font-size: 13px; height: 160px;}
+div.spec-slide ul.info {color: #777777; font-size: 12px;}
+div.spec-slide ul.info li {text-align: left;}
+div.spec-slide ul.info li em {display: block; font-size: 22px; font-weight: 600; color: #333333;}
+div.spec-slide ul.info li em span {font-size: 20px;}
+div.spec-slide div.box-bottom::after {content: ''; position: absolute; left: 0; top: 0; width: 48%; height: 100%; border: 3px solid #000000; box-sizing: border-box; transition: left 0.3s;}
+div.spec-slide div.box-bottom.left ul.indicator > li:nth-child(1) > a {opacity: 1;}
+div.spec-slide div.box-bottom.right ul.indicator > li:nth-child(2) > a {opacity: 1;}
+div.spec-slide div.box-bottom.left::after {left: 0;}
+div.spec-slide div.box-bottom.right::after {left: 52%;}
+
+body.models section.safety1 {position: relative; background: #ffffff; color: #000000; padding: 80px 0;}
+body.models section.safety div.feature {position: relative; width: 200%; left: -25%;}
+body.models section.safety div.feature img {width: 100%;}
+body.models section.safety div.feature ul li {position: absolute; left: 0; top: 0; background: pink;}
+body.models section.safety div.feature ul li::before {content: ''; position: absolute; left: 0; width: 2px; height: 200px; transform: translate(-50%, 0); background: #000000;}
+body.models section.safety div.feature ul li::after {content: ''; position: absolute; left: 0; top: 0; transform: translate(-50%, -50%); width: 5px; height: 5px; border: 1px solid #000000; background: #ffffff; border-radius: 20px;}
+body.models section.safety div.feature ul li.front {left: 25.3%; top: 51%;}
+body.models section.safety div.feature ul li.side {left: 46.5%; top: 25.5%;}
+body.models section.safety div.feature ul li.roll {left: 50.2%; top: 59.5%;}
+body.models section.safety div.feature ul li.front::before {bottom: 0; height: 200px;}
+body.models section.safety div.feature ul li.side::before {bottom: 0; height: 100px;}
+body.models section.safety div.feature ul li.roll::before {top: 0; height: 120px;}
+body.models section.safety div.feature ul li span {position: absolute; left: 10px; font-weight: 600; font-size: 12px; width: 200px;}
+body.models section.safety div.feature ul li.front span {bottom: 180px;}
+body.models section.safety div.feature ul li.side span {bottom: 80px;}
+body.models section.safety div.feature ul li.roll span {top: 100px;}
+
+body.models section.safety2 {position: relative; height: 500px; overflow: hidden; background: pink;}
+body.models section.safety2 video {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: 100%;}
+body.models section.safety2 ul.auto {position: absolute; left: 0; bottom: 50px; display: table; table-layout: fixed; width: 100%; box-sizing: border-box; text-align: center;}
+body.models section.safety2 ul.auto li {display: table-cell;}
+body.models section.safety2 ul.auto li em {display: block; font-size: 20px; font-weight: 600;}
+
+
+
+
+
+
+
+/* animation keyframes */
+
+/*
+@keyframes show-up {
+  0% {transform: translate(0, 50px); opacity: 0;}
+  100% {transform: translate(0, 0); opacity: 1;}
+}
+@keyframes show-up2 {
+  0% {transform: translate(-50%, 50px); opacity: 0;}
+  100% {transform: translate(-50%, 0); opacity: 1;}
+}
+@keyframes btn-effect-right {
+  0% {transform: translate(0, 0);}
+  100% {transform: translate(5px, 0);}
+}
+*/
+
